@@ -1,6 +1,6 @@
-import { ProductType } from '../enum/product.enum';
+import { DishType } from '../enum/dish.enum';
 
-export interface Product {
+export interface Dish {
   title: string;
-  type: ProductType;
+  type: DishType;
 }

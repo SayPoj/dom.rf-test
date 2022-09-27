@@ -1,4 +1,13 @@
-export enum DrinkType {
-  one = 1,
-  two = 2,
-}
+import { Drink } from '../interfaces/drink.interface';
+import { DrinkType } from '../enum/drink.enum';
+
+export const drinks: Drink[] = [
+  {
+    title: 'Напиток 1',
+    type: DrinkType.one
+  },
+  {
+    title: 'Напиток 2',
+    type: DrinkType.two,
+  },
+];

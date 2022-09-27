@@ -6,7 +6,8 @@
         <th>Коммментарий</th>
     </thead>
     <tbody>
-        <tr *ngFor="let product of products" (click)="editProduct(product)">
+        <tr *ngFor="let product of products"
+            (click)="editProduct(product)">
             <td>{{product.title}}</td>
             <td>{{getProductFieldValue(product, productFieldType.drink)}}</td>
             <td>{{getProductFieldValue(product, productFieldType.dish)}}</td>

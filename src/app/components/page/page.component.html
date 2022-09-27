@@ -1,11 +1,22 @@
 <label class="product-control">
     <h3>Выберите продукт:</h3>
     <select [(ngModel)]="selectedProduct">
-        <option [ngValue]="null" disabled selected>Выберите продукт</option>
-        <option *ngFor="let product of products" [ngValue]="product">{{product.title}}</option>
+        <option [ngValue]="null"
+                disabled
+                selected>
+            Выберите продукт
+        </option>
+        <option *ngFor="let product of products"
+                [ngValue]="product">
+            {{product.title}}
+        </option>
     </select>
 </label>
-<app-product-form (productChange)="addProduct($event)" (productReset)="productReset()" *ngIf="selectedProduct"
-                  [product]="selectedProduct"></app-product-form>
+<app-product-form *ngIf="selectedProduct"
+                  (productChange)="addProduct($event)"
+                  (productReset)="productReset()"
+                  [product]="selectedProduct">
+</app-product-form>
 <app-added-products *ngIf="saveProductsService.products"
-                    [products]="saveProductsService.products | async"></app-added-products>
+                    [products]="saveProductsService.products | async">
+</app-added-products>

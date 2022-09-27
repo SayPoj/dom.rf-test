@@ -33,7 +33,7 @@ export class AddedProductsComponent {
     }
   }
 
-  public editProduct(product: Product) {
+  public editProduct(product: Product): void {
     this.editProductComponent.product = product;
     this.editProductComponent.open();
   }
