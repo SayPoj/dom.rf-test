@@ -1,0 +1,61 @@
+{
+  "root": true,
+  "plugins": ["@typescript-eslint" ,"import", "prettier"],
+  "overrides": [
+    {
+      "files": ["*.js"],
+      "parserOptions": {
+        "ecmaVersion": 2017
+      },
+      "env": {
+        "es6": true
+      }
+    },
+    {
+      "files": [
+        "*.ts"
+      ],
+      "parserOptions": {
+        "project": [
+          "tsconfig.json"
+        ],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:import/recommended",
+        "prettier",
+        "plugin:prettier/recommended"
+      ],
+      "rules": {
+        "quotes": ["error", "single"],
+        "semi": "error",
+        "curly": "error",
+        "brace-style": "error",
+        "eqeqeq": "error",
+        "indent": ["error", 2, { "SwitchCase": 1 }],
+        "import/no-unresolved": "off",
+        "prefer-const": "error",
+        "@typescript-eslint/explicit-member-accessibility": ["error", {
+          "overrides": {
+            "constructors": "no-public"
+          }
+        }],
+        "no-unused-expressions": ["error", {"allowTernary": true}],
+        "no-underscore-dangle": "off",
+        "@typescript-eslint/explicit-function-return-type": ["error", { "allowExpressions": true } ],
+        "@typescript-eslint/no-inferrable-types": "error",
+        "@typescript-eslint/lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }]
+      }
+    },
+    {
+      "files": [
+        "*.html"
+      ],
+      "extends": [
+        "plugin:@angular-eslint/template/recommended"
+      ]
+    }
+  ]
+}

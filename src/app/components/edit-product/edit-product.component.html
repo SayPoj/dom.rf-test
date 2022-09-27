@@ -1,0 +1,9 @@
+<dialog #dialog>
+    <app-product-form *ngIf="product"
+                      [deletable]="true"
+                      [product]="product"
+                      (productChange)="updateProduct($event)"
+                      (productReset)="closeModal()"
+                      (productDelete)="deleteProduct()"
+    ></app-product-form>
+</dialog>

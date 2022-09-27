@@ -1,0 +1,20 @@
+<fieldset class="container">
+    <form class="form" [formGroup]="productForm" (ngSubmit)="onSubmit()" (reset)="onReset()">
+        <div class="form-row">
+            <select *ngIf="productForm.contains(productFieldType.drink.toString())" [formControlName]="productFieldType.drink.toString()">
+                <option [ngValue]="null" disabled selected >Напиток</option>
+                <option *ngFor="let drink of drinks" [ngValue]="drink">{{drink.title}}</option>
+            </select>
+            <select *ngIf="productForm.contains(productFieldType.dish.toString())" [formControlName]="productFieldType.dish.toString()">
+                <option [ngValue]="null" disabled selected >Блюдо</option>
+                <option *ngFor="let dish of dishes" [ngValue]="dish">{{dish.title}}</option>
+            </select>
+            <input *ngIf="productForm.contains(productFieldType.comment.toString())" type="text" [formControlName]="productFieldType.comment.toString()">
+        </div>
+        <div class="form-buttons">
+            <button type="reset">Отмена</button>
+            <button type="submit">Сохранить</button>
+            <button type="button" *ngIf="deletable" class="delete-btn" (click)="productDelete.emit()">Удалить</button>
+        </div>
+    </form>
+</fieldset>
